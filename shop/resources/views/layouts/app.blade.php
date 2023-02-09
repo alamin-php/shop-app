@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{ asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css')}}">
+  @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!-- Site wrapper -->
@@ -207,7 +208,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../charts/chartjs.html" class="nav-link">
+                <a href="{{ route('user') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All User</p>
                 </a>
@@ -264,5 +265,6 @@
 <script src="{{ asset('backend/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('backend/dist/js/demo.js')}}"></script>
+@stack('scripts')
 </body>
 </html>
