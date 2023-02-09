@@ -59,7 +59,7 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>10</h3>
-                  <p>Today Pending Task</p>
+                  <p>Current Stock Position</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
@@ -73,7 +73,7 @@
               <div class="small-box bg-success">
                 <div class="inner">
                   <h3>110</h3>
-                  <p>Total Task</p>
+                  <p>Today Sale</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>

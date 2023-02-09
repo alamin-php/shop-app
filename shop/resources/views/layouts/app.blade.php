@@ -28,10 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{route('home')}}" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -234,17 +231,9 @@
           </li>
           <li class="nav-header">SETTINGS</li>
           <li class="nav-item">
-            <a href="../calendar.html" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Apps Setting
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
-              <i class="nav-icon fa fa-power-off"></i>
+              <i class="nav-icon fa fa-power-off text-danger"></i>
               <p>Logout</p>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
