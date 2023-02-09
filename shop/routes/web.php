@@ -26,3 +26,10 @@ Route::post('/user/store', [App\Http\Controllers\UserController::class, 'store']
 Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
 Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('user.delete');
+//Quality Router
+Route::get('/quality', [App\Http\Controllers\QualityController::class, 'index'])->name('quality');
+Route::get('/quality/create', [App\Http\Controllers\QualityController::class, 'create'])->name('quality.create');
+Route::post('/quality/store', [App\Http\Controllers\QualityController::class, 'store'])->name('quality.store');
+Route::get('/quality/edit/{id}', [App\Http\Controllers\QualityController::class, 'edit'])->name('quality.edit');
+Route::post('/quality/update/{id}', [App\Http\Controllers\QualityController::class, 'update'])->name('quality.update');
+Route::get('/quality/delete/{id}', [App\Http\Controllers\QualityController::class, 'delete'])->name('quality.delete');

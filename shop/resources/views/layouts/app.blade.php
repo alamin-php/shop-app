@@ -202,6 +202,23 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
+                Products
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('quality') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Quality</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
                 Users
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -211,12 +228,6 @@
                 <a href="{{ route('user') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All User</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>User Role</p>
                 </a>
               </li>
             </ul>
