@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Users')
+@section('title', 'Product')
 @push('css')
       <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -13,12 +13,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">All Quality</h1>
+              <h1 class="m-0">All Product</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Quality</li>
+                    <li class="breadcrumb-item active">Product</li>
                   </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -33,8 +33,8 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Quality Table</h3>
-                  <a href="{{route('quality.create')}}" class="btn btn-primary btn-sm" style="float:right"><i class="fa fa-plus"></i> Add New</a>
+                  <h3 class="card-title">Product Stock Table</h3>
+                  <a href="{{route('product.create')}}" class="btn btn-primary btn-sm" style="float:right"><i class="fa fa-plus"></i> Add New</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -43,19 +43,27 @@
                     <tr>
                       <th>SL No</th>
                       <th>Name</th>
-                      <th>Status</th>
+                      <th>Quality</th>
+                      <th>Size</th>
+                      <th>Stock</th>
+                      <th>Per@Price</th>
+                      <th>Total Price</th>
                       <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach ($quality as $row)
+                        @foreach ($product as $row)
                         <tr>
                           <td>{{ $loop->index+1 }}</td>
                           <td>{{ $row->name }}</td>
-                          <td>@if($row->status == true) <span class="badge badge-success">Active</span> @else <span class="badge badge-danger">Inactive</span> @endif</td>
+                          <td>{{ $row->quality->name }}</td>
+                          <td>{{ $row->size }}</td>
+                          <td>{{ $row->qty }}</td>
+                          <td>{{ number_format($row->price) }}/=</td>
+                          <td>{{ number_format($row->total_price) }}/=</td>
                           <td>
-                            <a href="{{ route('quality.edit', $row->id) }}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                            <a href="{{ route('quality.delete', $row->id) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                            <a href="{{ route('product.edit', $row->id) }}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                            <a href="{{ route('product.delete', $row->id) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                         </td>
                         </tr>
 

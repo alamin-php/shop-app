@@ -33,3 +33,11 @@ Route::post('/quality/store', [App\Http\Controllers\QualityController::class, 's
 Route::get('/quality/edit/{id}', [App\Http\Controllers\QualityController::class, 'edit'])->name('quality.edit');
 Route::post('/quality/update/{id}', [App\Http\Controllers\QualityController::class, 'update'])->name('quality.update');
 Route::get('/quality/delete/{id}', [App\Http\Controllers\QualityController::class, 'delete'])->name('quality.delete');
+
+//Product Router
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
+Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('product.create');
+Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
+Route::get('/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
+Route::post('/product/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('product.update');
+Route::get('/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('product.delete');

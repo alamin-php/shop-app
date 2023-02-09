@@ -196,6 +196,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('home')}}" class="nav-link">
+              <i class="nav-icon fa fa-copy"></i>
+              <p>
+                Sales
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fab fa-product-hunt"></i>
               <p>
@@ -204,6 +212,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('product') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Product</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{ route('quality') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
