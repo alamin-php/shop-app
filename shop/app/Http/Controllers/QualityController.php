@@ -15,6 +15,9 @@ class QualityController extends Controller
         return view('backend.quality.create');
     }
     public function store(Request $request){
+        $validated = $request->validate([
+            'name' => 'required|unique:qualities|max:255',
+        ]);
         $quality = new Quality();
         $quality->name = $request->name;
         $quality->save();
@@ -25,6 +28,9 @@ class QualityController extends Controller
         return view('backend.quality.edit', compact('quality'));
     }
     public function update(Request $request, $id){
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         $quality = Quality::find($id);
         $quality->name = $request->name;
         $quality->status = $request->status;

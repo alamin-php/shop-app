@@ -34,22 +34,26 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Add New Quality</h3>
-                            <a href="{{route('quality')}}" class="btn btn-primary btn-sm" style="float:right"><i class="fa fa-undo"></i>
+                            <a href="{{ route('quality') }}" class="btn btn-primary btn-sm" style="float:right"><i
+                                    class="fa fa-undo"></i>
                                 Back</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="{{route('quality.store')}}" method="post">
+                            <form action="{{ route('quality.store') }}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" id="name"
                                         placeholder="Enter quality name">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-success btn-sm float-end">Submit</button>
-                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-success btn-sm float-end">Submit</button>
+                        </div>
                         </form>
                         <!-- /.card-body -->
                     </div>

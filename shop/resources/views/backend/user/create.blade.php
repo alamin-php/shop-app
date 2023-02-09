@@ -45,11 +45,17 @@
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" id="name"
                                         placeholder="Enter name">
+                                        @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="emailAddress">Email</label>
                                     <input type="email" name="email" class="form-control" id="emailAddress"
                                         placeholder="Enter email">
+                                        @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>

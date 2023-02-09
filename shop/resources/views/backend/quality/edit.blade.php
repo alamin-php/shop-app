@@ -45,6 +45,9 @@
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" id="name"
                                         value="{{$quality->name}}">
+                                        @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Role</label>

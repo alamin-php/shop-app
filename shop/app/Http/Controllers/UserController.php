@@ -16,6 +16,10 @@ class UserController extends Controller
         return view('backend.user.create');
     }
     public function store(Request $request){
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users|max:255',
+        ]);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -28,6 +32,10 @@ class UserController extends Controller
         return view('backend.user.edit', compact('user'));
     }
     public function update(Request $request, $id){
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+        ]);
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
